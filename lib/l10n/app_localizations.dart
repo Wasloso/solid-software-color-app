@@ -105,6 +105,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hello World'**
   String get helloWorld;
+
+  /// Title of the application
+  ///
+  /// In en, this message translates to:
+  /// **'Colors App'**
+  String get appTitle;
 }
 
 class _AppLocalizationsDelegate

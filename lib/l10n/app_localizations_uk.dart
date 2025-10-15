@@ -10,4 +10,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get helloWorld => 'Привіт Світ';
+
+  @override
+  String get appTitle => 'Colors App';
 }

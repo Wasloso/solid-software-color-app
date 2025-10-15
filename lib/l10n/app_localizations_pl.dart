@@ -10,4 +10,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get helloWorld => 'Witaj Świecie';
+
+  @override
+  String get appTitle => 'Colors App';
 }

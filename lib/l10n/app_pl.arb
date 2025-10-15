@@ -1,4 +1,5 @@
 {
     "@@locale": "pl",
-    "helloWorld": "Witaj Świecie"
+    "helloWorld": "Witaj Świecie",
+    "appTitle": "Colors App"
 }
