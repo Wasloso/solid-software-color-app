@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:solid_software_color_app/l10n/app_localizations.dart';
 import 'package:solid_software_color_app/src/colorful_background/cubit/colors_cubit.dart';
 import 'package:solid_software_color_app/src/colorful_background/domain/colors_generator.dart';
 import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository.dart';
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Colors App',
         debugShowCheckedModeBanner: false,
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
         builder: (_, child) {
           return BlocProvider(
             create: (context) =>
