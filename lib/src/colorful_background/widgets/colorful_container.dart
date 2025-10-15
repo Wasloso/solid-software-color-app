@@ -19,10 +19,6 @@ class ColorfulContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: animationDuration,
-      curve: Curves.easeInOut,
-      color: color,
-    );
+    return AnimatedContainer(duration: animationDuration, color: color);
   }
 }
