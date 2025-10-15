@@ -1,14 +1,9 @@
-# flutter_project_template
-[![flutter_project_template](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_badge?projectId=149)](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_url?projectId=149)
+# Colorful App
 
-📖 Template for flutter projects using solid_lints, CI for tests and analysis.
+A Flutter app demonstrating dynamic color backgrounds.
 
-- Uses latest stable flutter
-- Repo name as your project name
-- Organization from your profile email address or default
+Tap anywhere on the screen to change the background color.
 
-# Usage
-1. Press "Use this template" on the menu.
-2. Fill Github form with your new repo name and press "Create repository from template"
-3. Wait for it to be created and set up action is complete. In a couple of minutes, you'll see the flutter project created in your repo once Github Actions are complete.
-4. Clone and code.
+Swipe left / right to change the hue.
+
+Swipe up / down to change the alpha channel of the color.
