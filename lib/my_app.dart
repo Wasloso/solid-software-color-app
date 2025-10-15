@@ -5,7 +5,6 @@ import 'package:solid_software_color_app/src/colorful_background/domain/colors_g
 import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository.dart';
 import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository_impl.dart';
 import 'package:solid_software_color_app/src/colorful_background/pages/color_page.dart';
-import 'package:solid_software_color_app/src/colorful_background/widgets/colorful_container.dart';
 
 /// Entry point of the app
 class MyApp extends StatelessWidget {

@@ -5,6 +5,8 @@ part of 'colors_cubit.dart';
 final class ColorsState extends Equatable {
   /// The current [Color].
   final Color color;
+
+  /// The alpha channel value of the current color.
   final int alpha;
 
   /// Constructor for [ColorsState] that requires a [Color].

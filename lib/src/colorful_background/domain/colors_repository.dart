@@ -1,7 +1,5 @@
 import 'dart:ui' show Color;
 
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_generator.dart';
-
 /// Abstract repository for generating random colors.
 abstract class ColorsRepository {
   /// Constructor for [ColorsRepository].
