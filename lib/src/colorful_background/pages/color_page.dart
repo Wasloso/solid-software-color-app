@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:solid_software_color_app/src/colorful_background/cubit/colors_cubit.dart';
+import 'package:solid_software_color_app/src/colorful_background/widgets/color_changing_text.dart';
 import 'package:solid_software_color_app/src/colorful_background/widgets/colorful_container.dart';
+import 'package:solid_software_color_app/src/common/extensions/color_contrast.dart';
+import 'package:solid_software_color_app/src/common/extensions/translate.dart';
+import 'package:solid_software_color_app/src/settings/widgets/locale_dropdown_menu.dart';
 
 /// Page that displays a colorful background and a centered "Hello world" text.
 ///
@@ -19,25 +23,44 @@ class ColorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GestureDetector(
-        onTap: () => context.read<ColorsCubit>().randomizeColor(),
-        onPanUpdate: (details) {
-          context.read<ColorsCubit>().updateAlpha(
-            delta: (details.delta.dy * 0.5).round(),
-          );
-          context.read<ColorsCubit>().adjustHue(delta: details.delta.dx * 0.5);
-        },
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            BlocBuilder<ColorsCubit, ColorsState>(
-              builder: (_, state) => ColorfulContainer(color: state.color),
+    return BlocBuilder<ColorsCubit, ColorsState>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: ColorChangingText(
+              color: state.color.inverted,
+              text: context.translate.appTitle,
+              fontSize: 20,
             ),
-            const Center(child: Text("Hello world")),
-          ],
-        ),
-      ),
+            actions: [LocaleDropdownMenu(color: state.color.inverted)],
+            backgroundColor: Colors.transparent,
+          ),
+          extendBodyBehindAppBar: true,
+          body: GestureDetector(
+            onTap: () => context.read<ColorsCubit>().randomizeColor(),
+            onPanUpdate: (details) {
+              context.read<ColorsCubit>().updateAlpha(
+                delta: (details.delta.dy * 0.5).round(),
+              );
+              context.read<ColorsCubit>().adjustHue(
+                delta: details.delta.dx * 0.5,
+              );
+            },
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                ColorfulContainer(color: state.color),
+                Center(
+                  child: ColorChangingText(
+                    color: state.color.inverted,
+                    text: context.translate.helloWorld,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
