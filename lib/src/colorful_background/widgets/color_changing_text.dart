@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solid_software_color_app/src/common/constants.dart';
 import 'package:solid_software_color_app/src/common/extensions/color_contrast.dart';
 
 /// A text widget that changes its color with an animation.
@@ -23,7 +24,7 @@ class ColorChangingText extends StatelessWidget {
     required this.color,
     required this.text,
     this.fontSize = 48,
-    this.colorChangeDuration = const Duration(milliseconds: 250),
+    this.colorChangeDuration = kColorChangeDuration,
     super.key,
   });
 
