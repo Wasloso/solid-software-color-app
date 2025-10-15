@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:solid_software_color_app/l10n/app_localizations.dart';
-import 'package:solid_software_color_app/src/colorful_background/cubit/colors_cubit.dart';
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_generator.dart';
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository.dart';
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository_impl.dart';
-import 'package:solid_software_color_app/src/colorful_background/pages/color_page.dart';
+import 'package:solid_software_color_app/src/color_playground/cubit/colors_cubit.dart';
+import 'package:solid_software_color_app/src/color_playground/domain/colors_generator.dart';
+import 'package:solid_software_color_app/src/color_playground/domain/colors_repository.dart';
+import 'package:solid_software_color_app/src/color_playground/domain/colors_repository_impl.dart';
+import 'package:solid_software_color_app/src/color_playground/pages/color_page.dart';
 import 'package:solid_software_color_app/src/settings/cubit/settings_cubit.dart';
 
 /// Entry point of the app

@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository.dart';
+import 'package:solid_software_color_app/src/color_playground/domain/colors_repository.dart';
 
 part 'colors_state.dart';
 
