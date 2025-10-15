@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solid_software_color_app/src/common/constants.dart';
 
 /// A container that fills its parent and animates color changes.
 class ColorfulContainer extends StatelessWidget {
@@ -13,7 +14,7 @@ class ColorfulContainer extends StatelessWidget {
   /// The [animationDuration] defaults to 250 milliseconds if not provided.
   const ColorfulContainer({
     required this.color,
-    this.animationDuration = const Duration(milliseconds: 250),
+    this.animationDuration = kColorChangeDuration,
     super.key,
   });
 

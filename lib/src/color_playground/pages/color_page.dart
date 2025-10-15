@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:solid_software_color_app/src/colorful_background/cubit/colors_cubit.dart';
-import 'package:solid_software_color_app/src/colorful_background/widgets/color_changing_text.dart';
-import 'package:solid_software_color_app/src/colorful_background/widgets/colorful_container.dart';
+import 'package:solid_software_color_app/src/color_playground/cubit/colors_cubit.dart';
+import 'package:solid_software_color_app/src/color_playground/widgets/color_changing_text.dart';
+import 'package:solid_software_color_app/src/color_playground/widgets/colorful_container.dart';
 import 'package:solid_software_color_app/src/common/extensions/color_contrast.dart';
 import 'package:solid_software_color_app/src/common/extensions/translate.dart';
 import 'package:solid_software_color_app/src/settings/widgets/locale_dropdown_menu.dart';
@@ -38,14 +38,9 @@ class ColorPage extends StatelessWidget {
           extendBodyBehindAppBar: true,
           body: GestureDetector(
             onTap: () => context.read<ColorsCubit>().randomizeColor(),
-            onPanUpdate: (details) {
-              context.read<ColorsCubit>().updateAlpha(
-                delta: (details.delta.dy * 0.5).round(),
-              );
-              context.read<ColorsCubit>().adjustHue(
-                delta: details.delta.dx * 0.5,
-              );
-            },
+            onPanUpdate: (details) => context
+                .read<ColorsCubit>()
+                .handlePanUpdate(dx: details.delta.dx, dy: details.delta.dy),
             child: Stack(
               fit: StackFit.expand,
               children: [

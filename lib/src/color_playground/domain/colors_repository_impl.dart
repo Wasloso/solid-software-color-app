@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_generator.dart';
-import 'package:solid_software_color_app/src/colorful_background/domain/colors_repository.dart';
+import 'package:solid_software_color_app/src/color_playground/domain/colors_generator.dart';
+import 'package:solid_software_color_app/src/color_playground/domain/colors_repository.dart';
 
 /// Implementation of [ColorsRepository] that uses [ColorsGenerator] to
 /// generate random colors.
