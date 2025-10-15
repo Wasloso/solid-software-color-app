@@ -1,7 +1,10 @@
 part of 'settings_cubit.dart';
 
+/// State class for [SettingsCubit] containing the current settings.
 class SettingsState extends Equatable {
+  /// Currently selected [Locale] of the app.
   final Locale locale;
+
   @override
   List<Object> get props => [locale];
 

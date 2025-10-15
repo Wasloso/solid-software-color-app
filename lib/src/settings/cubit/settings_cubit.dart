@@ -11,7 +11,8 @@ class SettingsCubit extends Cubit<SettingsState> {
   /// List of locales supported by the app.
   final List<Locale> supportedLocales;
 
-  /// Constructor for [SettingsCubit] that requires a list of [supportedLocales].
+  /// Constructor for [SettingsCubit] that requires a list of
+  /// [supportedLocales].
   SettingsCubit({required this.supportedLocales})
     : super(
         SettingsState(
@@ -19,6 +20,7 @@ class SettingsCubit extends Cubit<SettingsState> {
         ),
       );
 
+  /// Updates the app's locale if it is in the list of supported locales.
   void setLocale({required Locale locale}) {
     if (!supportedLocales.contains(locale)) return;
     emit(state.copyWith(locale: locale));
