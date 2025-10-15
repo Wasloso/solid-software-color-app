@@ -23,7 +23,7 @@ class ColorsCubit extends Cubit<ColorsState> {
   }
 
   /// Updates the alpha channel of the current color by the given [delta].
-  void updateAlpha({required int delta}) {
+  void _updateAlpha({required int delta}) {
     final newAlpha = (state.alpha + delta).clamp(0, 255);
     emit(
       state.copyWith(color: state.color.withAlpha(newAlpha), alpha: newAlpha),
@@ -31,11 +31,18 @@ class ColorsCubit extends Cubit<ColorsState> {
   }
 
   /// Adjusts the hue of the current color by the given [delta].
-  void adjustHue({required double delta}) {
+  void _adjustHue({required double delta}) {
     const int maxHue = 360;
     final HSLColor hsl = HSLColor.fromColor(state.color);
     double newHue = (hsl.hue + delta) % maxHue;
     if (newHue < 0) newHue += maxHue;
     emit(state.copyWith(color: hsl.withHue(newHue).toColor()));
+  }
+
+  /// Handles pan update gestures to adjust alpha and hue.
+  void handlePanUpdate({required double dx, required double dy}) {
+    const double sensitivity = 0.5;
+    _updateAlpha(delta: (dy * sensitivity).round());
+    _adjustHue(delta: dx * sensitivity);
   }
 }

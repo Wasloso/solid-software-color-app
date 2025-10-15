@@ -38,14 +38,9 @@ class ColorPage extends StatelessWidget {
           extendBodyBehindAppBar: true,
           body: GestureDetector(
             onTap: () => context.read<ColorsCubit>().randomizeColor(),
-            onPanUpdate: (details) {
-              context.read<ColorsCubit>().updateAlpha(
-                delta: (details.delta.dy * 0.5).round(),
-              );
-              context.read<ColorsCubit>().adjustHue(
-                delta: details.delta.dx * 0.5,
-              );
-            },
+            onPanUpdate: (details) => context
+                .read<ColorsCubit>()
+                .handlePanUpdate(dx: details.delta.dx, dy: details.delta.dy),
             child: Stack(
               fit: StackFit.expand,
               children: [
