@@ -32,9 +32,10 @@ class ColorsCubit extends Cubit<ColorsState> {
 
   /// Adjusts the hue of the current color by the given [delta].
   void adjustHue({required double delta}) {
+    const int maxHue = 360;
     final HSLColor hsl = HSLColor.fromColor(state.color);
-    double newHue = (hsl.hue + delta) % 360;
-    if (newHue < 0) newHue += 360;
+    double newHue = (hsl.hue + delta) % maxHue;
+    if (newHue < 0) newHue += maxHue;
     emit(state.copyWith(color: hsl.withHue(newHue).toColor()));
   }
 }

@@ -32,8 +32,7 @@ class ColorPage extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             BlocBuilder<ColorsCubit, ColorsState>(
-              builder: (context, state) =>
-                  ColorfulContainer(color: state.color),
+              builder: (_, state) => ColorfulContainer(color: state.color),
             ),
             const Center(child: Text("Hello world")),
           ],

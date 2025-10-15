@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Colors App',
         debugShowCheckedModeBanner: false,
-        builder: (context, child) {
+        builder: (_, child) {
           return BlocProvider(
             create: (context) =>
                 ColorsCubit(repository: context.read<ColorsRepository>()),
